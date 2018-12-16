@@ -2,12 +2,19 @@
   "name": "figma-plugin-boilterplate",
   "version": "1.0.0",
   "description": "An example plugin for Figma that utlize Figma Plugin Manager API.",
-  "main": "index.js",
+  "main": "figma-plugin-boilterplate.js",
   "repository": "https://cdes@github.com/cdes/figma-plugin-boilterplate.git",
   "author": "Ahmed Al Haddad <ahmed.hdd@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "parcel watch figma-plugin-boilterplate.js",
+    "prestart": "standard --fix figma-plugin-boilterplate.js",
+    "prebuild": "standard --fix figma-plugin-boilterplate.js",
+    "build": "parcel build figma-plugin-boilterplate.js"
+  },
   "dependencies": {},
   "devDependencies": {
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.10.3",
+    "standard": "^12.0.1"
   }
 }

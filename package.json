@@ -1,0 +1,9 @@
+{
+  "name": "figma-plugin-boilterplate",
+  "version": "1.0.0",
+  "description": "An example plugin for Figma that utlize Figma Plugin Manager API.",
+  "main": "index.js",
+  "repository": "https://cdes@github.com/cdes/figma-plugin-boilterplate.git",
+  "author": "Ahmed Al Haddad <ahmed.hdd@gmail.com>",
+  "license": "MIT"
+}

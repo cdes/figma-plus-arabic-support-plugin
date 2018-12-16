@@ -5,5 +5,9 @@
   "main": "index.js",
   "repository": "https://cdes@github.com/cdes/figma-plugin-boilterplate.git",
   "author": "Ahmed Al Haddad <ahmed.hdd@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.10.3"
+  }
 }

@@ -1,8 +1,7 @@
 {
   "name": "figma-plugin-boilerplate",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "An example plugin for Figma that utlize Figma Plugin Manager API.",
-  "browser": "dist/figma-plugin-boilerplate.umd.js",
   "repository": "https://cdes@github.com/cdes/figma-plugin-boilerplate.git",
   "author": "Ahmed Al Haddad <ahmed.hdd@gmail.com>",
   "license": "MIT",
@@ -10,6 +9,9 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "jest": "^23.6.0",
     "prettier": "1.15.3",
     "rollup": "^0.67.4",
     "rollup-plugin-babel": "^4.1.0",
@@ -21,8 +23,7 @@
     "build": "rollup -c",
     "prebuild": "prettier --write src/**",
     "dev": "rollup -c -w",
-    "test": "node test/test.js",
-    "pretest": "yarn run build"
+    "test": "jest"
   },
   "files": [
     "dist"

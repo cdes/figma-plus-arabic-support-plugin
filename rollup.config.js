@@ -10,7 +10,7 @@ export default [
 		input: 'src/main.js',
 		output: {
 			name: 'figma-plugin-boilterplate',
-			file: pkg.browser,
+			file: 'dist/figma-plugin-boilerplate.umd.js',
 			format: 'umd'
 		},
 		plugins: [

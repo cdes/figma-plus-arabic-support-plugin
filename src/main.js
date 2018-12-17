@@ -1,4 +1,4 @@
-class ExamplePlugin {
+export default class ExamplePlugin {
   constructor() {
     this.options = [
       "Alert File Name",
@@ -9,6 +9,8 @@ class ExamplePlugin {
 
     const { figmaPlugin } = window;
     figmaPlugin.createPluginsMenuItem(...this.options);
+
+    window.examplePlugin = this;
   }
 
   main() {
@@ -18,5 +20,3 @@ class ExamplePlugin {
     alert(fileName);
   }
 }
-
-window.examplePlugin = new ExamplePlugin();

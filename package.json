@@ -6,21 +6,31 @@
   "author": "Ahmed Al Haddad <ahmed.hdd@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@babel/polyfill": "^7.0.0"
+    "@babel/runtime": "^7.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-classes": "^7.2.2",
+    "@babel/plugin-transform-regenerator": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/plugin-transform-shorthand-properties": "^7.2.0",
+    "@babel/plugin-transform-template-literals": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
-    "parcel-bundler": "^1.11.0",
-    "prettier": "1.15.3"
+    "prettier": "1.15.3",
+    "rollup": "^0.67.4",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.0"
   },
   "scripts": {
-    "build": "parcel build ./src/main.js",
+    "build": "rollup -cm",
     "prebuild": "prettier --write src/**",
-    "dev": "parcel watch ./src/main.js",
+    "dev": "rollup -cw -m inline",
     "test": "jest"
   },
   "files": [

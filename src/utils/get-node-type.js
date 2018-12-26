@@ -1,3 +1,3 @@
-export default function(nodeId) {
+export default (nodeId) => {
   return window.figmaPlugin.getNodeType(nodeId);
 }

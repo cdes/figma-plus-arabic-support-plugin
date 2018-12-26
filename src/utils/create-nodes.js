@@ -1,3 +1,3 @@
-export default function(htmlString) {
+export default (htmlString) => {
   return document.createRange().createContextualFragment(htmlString);
 }

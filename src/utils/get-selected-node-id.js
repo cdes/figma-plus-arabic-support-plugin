@@ -1,3 +1,3 @@
-export default function () {
+export default () => {
   return Object.keys(App._state.mirror.sceneGraphSelection)[0];
 }

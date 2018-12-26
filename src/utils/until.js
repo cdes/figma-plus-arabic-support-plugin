@@ -1,5 +1,5 @@
-export default function(conditionFunction) {
-  const poll = function(resolve) {
+export default (conditionFunction) => {
+  const poll = (resolve) => {
     if (conditionFunction()) resolve();
     else setTimeout(() => poll(resolve), 500);
   };

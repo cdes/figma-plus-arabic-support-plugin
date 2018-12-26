@@ -1,4 +1,4 @@
-export default function() {
+export default () => {
   const nodeId = Object.keys(App._state.mirror.sceneGraphSelection)[0];
 
   if (nodeId) {

@@ -5,27 +5,31 @@
   "repository": "https://cdes@github.com/cdes/figma-plugin-boilerplate.git",
   "author": "Ahmed Al Haddad <ahmed.hdd@gmail.com>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
-    "prettier": "1.15.3",
-    "rollup": "^0.67.4",
-    "rollup-plugin-babel": "^4.1.0",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-uglify": "^6.0.0"
+    "parcel-bundler": "^1.11.0",
+    "prettier": "1.15.3"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "parcel build ./src/main.js",
     "prebuild": "prettier --write src/**",
-    "dev": "rollup -c -w",
+    "dev": "parcel watch ./src/main.js",
     "test": "jest"
   },
   "files": [
     "dist"
+  ],
+  "browserslist": [
+    "chrome >= 49",
+    "firefox >= 45",
+    "safari >=10.1",
+    "edge >= 14"
   ]
 }

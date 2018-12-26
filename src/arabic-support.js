@@ -1,13 +1,15 @@
+import debounce from "lodash.debounce";
+
 import {
   selectionToNodeId,
   createNodes,
   until,
   getActiveTab,
   getNodeType,
-  reverseString,
+  transform,
   getNodeText,
   getSelectedType,
-  getSelectedNodeId
+  getSelectedNodesIds
 } from "./utils";
 
 const nodesText = `<div id="arabic-support" class="raw_components--panel--3IcXg "><div><div class="raw_components--panelTitle--7MaOu raw_components--base--3TpZG raw_components--row--3dLxJ collapsible_property_panel--panelTitle--1cZql"><div class="collapsible_property_panel--panelTitleText--3GA0U">Arabic</div></div><span></span><div><div class="raw_components--row--3dLxJ type_panel--twoCol--Fj7rw" style="height: auto;"><label class="" style="display: flex;flex-direction: column;align-items: flex-start;justify-content: stretch;width: 100%;"><textarea dir="rtl" id="arabic-support-textarea" type="text" spellcheck="false" value="0" style="background: #fcfcfc;width: 100%;height: 24px;padding: 4px;box-sizing: border-box;border: 1px solid #d4d4d4;border-radius: 3px;height: 80px;margin-bottom: 8px;"></textarea></label></div></div></div></div>`;
@@ -54,21 +56,32 @@ export default class ArabicSupport {
       textPanel.appendChild(nodes);
 
       const textarea = this.getTextarea();
-      const selectedNodeId = getSelectedNodeId();
+      const selectedNodeId = getSelectedNodesIds()[0];
 
       await until(() => typeof selectedNodeId !== "undefined");
 
       const selectedNodeText = getNodeText(selectedNodeId);
-      textarea.value = reverseString(selectedNodeText);
-      textarea.addEventListener("input", this.handleInput.bind(this));
+      textarea.value = transform(selectedNodeText);
+      textarea.addEventListener(
+        "input",
+        debounce(this.handleInput.bind(this), 150)
+      );
     }
   }
 
   onLayersSelected(event) {
     const ui = this.getPanel();
     const selections = Array.from(event.buffer);
+    const sceneGraphSelection = Object.keys(
+      window.App._state.mirror.sceneGraphSelection
+    );
 
-    if (ui === null || selections.length !== 8) return;
+    if (
+      ui === null ||
+      selections.length !== 8 ||
+      sceneGraphSelection.length > 1
+    )
+      return;
 
     const selectedNodeId = selectionToNodeId(selections);
     const nodeType = getNodeType(selectedNodeId);
@@ -77,7 +90,7 @@ export default class ArabicSupport {
       ui.style.display = "block";
       const textarea = this.getTextarea();
       const selectedNodeText = getNodeText(selectedNodeId);
-      textarea.value = reverseString(selectedNodeText);
+      textarea.value = transform(selectedNodeText);
     } else {
       ui.style.display = "none";
       const textarea = this.getTextarea();
@@ -86,13 +99,8 @@ export default class ArabicSupport {
   }
 
   handleInput(event) {
-    // TODO: use proper RTL support instead of just reversing.
-    // 1. Extract Arabic words (by splitting text according to netural charactars )
-    // 2. Reverse & reshape Arabic words.
-    // https://www.npmjs.com/package/direction
-    // https://github.com/louy/Javascript-Arabic-Reshaper
-    // https://github.com/mapmeld/js-arabic-reshaper
-    window.figmaPlugin.replaceText(reverseString(event.target.value));
+    const transformedText = transform(event.target.value);
+    window.figmaPlugin.replaceText(transformedText);
     const textarea = this.getTextarea();
     textarea.focus();
   }

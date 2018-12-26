@@ -6,7 +6,9 @@
   "author": "Ahmed Al Haddad <ahmed.hdd@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.2.0"
+    "@babel/runtime": "^7.2.0",
+    "direction": "^1.0.2",
+    "lodash.debounce": "^4.0.8"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -30,7 +32,7 @@
   "scripts": {
     "build": "rollup -cm",
     "prebuild": "prettier --write src/**",
-    "dev": "rollup -cw -m inline",
+    "dev": "rollup -cwm",
     "test": "jest"
   },
   "files": [

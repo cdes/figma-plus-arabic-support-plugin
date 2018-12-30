@@ -1,10 +1,6 @@
-import Reshaper from './arabic-reshaper';
+import { reshape } from './js-arabic-reshaper';
 import direction from 'direction';
 import reverse from "./reverse-string";
-
-const options = {
-  ligatures: false,
-}
 
 const isLTR = (str) => direction(str) === 'ltr';
 const isRTL = (str) => direction(str) === 'rtl';
@@ -19,29 +15,49 @@ const split = (str, tokens) => {
   return str;
 }
 
-export default (str) => {
+const transform = (str, {spaceHack = false, ligatures = false, ignoreIsolates = true} = {}) => {
 
-  const finalString = Reshaper.reshape(str, options);
-  const neutral = finalString.split('').filter(char => isNeutral(char));
+  const neutral = str.split('').filter(char => isNeutral(char));
   
   let reversed;
-  let merged;
 
   // A single word, no need to split
   if (neutral.length === 0) {
-    reversed = isLTR(finalString) ? finalString : reverse(finalString);
+    reversed = isLTR(str) ? str : reverse(str);
   }
   else {
-    reversed = split(finalString, neutral).map(word => {
-      return isLTR(word) ? word : reverse(word);
+    reversed = split(str, neutral).map(word => {
+      if (isLTR(word)) {
+        return word;
+      }
+      else {
+        const reshapedWord = reshape(word, {ligatures, ignoreIsolates});
+        const reverseWord = reverse(reshapedWord);
+        return reverseWord;
+      }      
     });
   }
 
+  let transformed;
+
   if (Array.isArray(reversed)) {
     const merged = reversed.map((v,i) => [v, neutral[i]]).reduce((a,b) => a.concat(b));
-    return merged.reverse().join('');
+    transformed = merged.reverse().join('');
   }
   else {
-    return reversed;
+    transformed = reversed;
   }
+
+  if (spaceHack) {
+    transformed = transformed.split('').join('\u200a');
+  }
+
+  return transformed;
 }
+
+if(typeof process !== 'undefined' && process.env.ROLLUP_WATCH) {
+  const text = "أنا دائم التألق بالكتابة بالعربي with English. والعربية أيضاm";
+  console.log(transform(text, {ligatures: false}));
+}
+
+export default transform;

@@ -1502,159 +1502,159 @@ const LIGATURES = [
 
 const LETTERS = {
   // Letter HAMZA
-  '\u0621': {isolated:'\u0621'},
+  '\u0621': {isolated:'\uFE80'},
   // Letter ALEF WITH MADDA ABOVE
-  '\u0622':{isolated:'\u0622',final:'\uFE82'},
+  '\u0622':{isolated:'\uFE81',final:'\uFE82'},
   // Letter ALEF WITH HAMZA ABOVE
-  '\u0623':{isolated:'\u0623',final:'\uFE84'},
+  '\u0623':{isolated:'\uFE83',final:'\uFE84'},
   // Letter WAW WITH HAMZA ABOVE
-  '\u0624':{isolated:'\u0624',final:'\uFE86'},
+  '\u0624':{isolated:'\uFE85',final:'\uFE86'},
   // Letter ALEF WITH HAMZA BELOW
-  '\u0625':{isolated:'\u0625',final:'\uFE88'},
+  '\u0625':{isolated:'\uFE87',final:'\uFE88'},
   // Letter YEH WITH HAMZA ABOVE
-  '\u0626':{isolated:'\u0626',initial:'\uFE8B',medial:'\uFE8C',final:'\uFE8A'},
+  '\u0626':{isolated:'\uFE89',initial:'\uFE8B',medial:'\uFE8C',final:'\uFE8A'},
   // Letter ALEF
-  '\u0627':{isolated:'\u0627',final:'\uFE8E'},
+  '\u0627':{isolated:'\uFE8D',final:'\uFE8E'},
   // Letter BEH
-  '\u0628':{isolated:'\u0628',initial:'\uFE91',medial:'\uFE92',final:'\uFE90'},
+  '\u0628':{isolated:'\uFE8F',initial:'\uFE91',medial:'\uFE92',final:'\uFE90'},
   // Letter TEH MARBUTA
-  '\u0629':{isolated:'\u0629',final:'\uFE94'},
+  '\u0629':{isolated:'\uFE93',final:'\uFE94'},
   // Letter TEH
-  '\u062A':{isolated:'\u062A',initial:'\uFE97',medial:'\uFE98',final:'\uFE96'},
+  '\u062A':{isolated:'\uFE95',initial:'\uFE97',medial:'\uFE98',final:'\uFE96'},
   // Letter THEH
-  '\u062B':{isolated:'\u062B',initial:'\uFE9B',medial:'\uFE9C',final:'\uFE9A'},
+  '\u062B':{isolated:'\uFE99',initial:'\uFE9B',medial:'\uFE9C',final:'\uFE9A'},
   // Letter JEEM
-  '\u062C':{isolated:'\u062C',initial:'\uFE9F',medial:'\uFEA0',final:'\uFE9E'},
+  '\u062C':{isolated:'\uFE9D',initial:'\uFE9F',medial:'\uFEA0',final:'\uFE9E'},
   // Letter HAH
-  '\u062D':{isolated:'\u062D',initial:'\uFEA3',medial:'\uFEA4',final:'\uFEA2'},
+  '\u062D':{isolated:'\uFEA1',initial:'\uFEA3',medial:'\uFEA4',final:'\uFEA2'},
   // Letter KHAH
-  '\u062E':{isolated:'\u062E',initial:'\uFEA7',medial:'\uFEA8',final:'\uFEA6'},
+  '\u062E':{isolated:'\uFEA5',initial:'\uFEA7',medial:'\uFEA8',final:'\uFEA6'},
   // Letter DAL
-  '\u062F':{isolated:'\u062F',final:'\uFEAA'},
+  '\u062F':{isolated:'\uFEA9',final:'\uFEAA'},
   // Letter THAL
-  '\u0630':{isolated:'\u0630',final:'\uFEAC'},
+  '\u0630':{isolated:'\uFEAB',final:'\uFEAC'},
   // Letter REH
-  '\u0631':{isolated:'\u0631',final:'\uFEAE'},
+  '\u0631':{isolated:'\uFEAD',final:'\uFEAE'},
   // Letter ZAIN
-  '\u0632':{isolated:'\u0632',final:'\uFEB0'},
+  '\u0632':{isolated:'\uFEAF',final:'\uFEB0'},
   // Letter SEEN
-  '\u0633':{isolated:'\u0633',initial:'\uFEB3',medial:'\uFEB4',final:'\uFEB2'},
+  '\u0633':{isolated:'\uFEB1',initial:'\uFEB3',medial:'\uFEB4',final:'\uFEB2'},
   // Letter SHEEN
-  '\u0634':{isolated:'\u0634',initial:'\uFEB7',medial:'\uFEB8',final:'\uFEB6'},
+  '\u0634':{isolated:'\uFEB5',initial:'\uFEB7',medial:'\uFEB8',final:'\uFEB6'},
   // Letter SAD
-  '\u0635':{isolated:'\u0635',initial:'\uFEBB',medial:'\uFEBC',final:'\uFEBA'},
+  '\u0635':{isolated:'\uFEB9',initial:'\uFEBB',medial:'\uFEBC',final:'\uFEBA'},
   // Letter DAD
-  '\u0636':{isolated:'\u0636',initial:'\uFEBF',medial:'\uFEC0',final:'\uFEBE'},
+  '\u0636':{isolated:'\uFEBD',initial:'\uFEBF',medial:'\uFEC0',final:'\uFEBE'},
   // Letter TAH
-  '\u0637':{isolated:'\u0637',initial:'\uFEC3',medial:'\uFEC4',final:'\uFEC2'},
+  '\u0637':{isolated:'\uFEC1',initial:'\uFEC3',medial:'\uFEC4',final:'\uFEC2'},
   // Letter ZAH
-  '\u0638':{isolated:'\u0638',initial:'\uFEC7',medial:'\uFEC8',final:'\uFEC6'},
+  '\u0638':{isolated:'\uFEC5',initial:'\uFEC7',medial:'\uFEC8',final:'\uFEC6'},
   // Letter AIN
-  '\u0639':{isolated:'\u0639',initial:'\uFECB',medial:'\uFECC',final:'\uFECA'},
+  '\u0639':{isolated:'\uFEC9',initial:'\uFECB',medial:'\uFECC',final:'\uFECA'},
   // Letter GHAIN
-  '\u063A':{isolated:'\u063A',initial:'\uFECF',medial:'\uFED0',final:'\uFECE'},
+  '\u063A':{isolated:'\uFECD',initial:'\uFECF',medial:'\uFED0',final:'\uFECE'},
   // TATWEEL
   '\u0640':{isolated:'\u0640',initial:'\u0640',medial:'\u0640',final:'\u0640'},
   // Letter FEH
-  '\u0641':{isolated:'\u0641',initial:'\uFED3',medial:'\uFED4',final:'\uFED2'},
+  '\u0641':{isolated:'\uFED1',initial:'\uFED3',medial:'\uFED4',final:'\uFED2'},
   // Letter QAF
-  '\u0642':{isolated:'\u0642',initial:'\uFED7',medial:'\uFED8',final:'\uFED6'},
+  '\u0642':{isolated:'\uFED5',initial:'\uFED7',medial:'\uFED8',final:'\uFED6'},
   // Letter KAF
-  '\u0643':{isolated:'\u0643',initial:'\uFEDB',medial:'\uFEDC',final:'\uFEDA'},
+  '\u0643':{isolated:'\uFED9',initial:'\uFEDB',medial:'\uFEDC',final:'\uFEDA'},
   // Letter LAM
-  '\u0644':{isolated:'\u0644',initial:'\uFEDF',medial:'\uFEE0',final:'\uFEDE'},
+  '\u0644':{isolated:'\uFEDD',initial:'\uFEDF',medial:'\uFEE0',final:'\uFEDE'},
   // Letter MEEM
-  '\u0645':{isolated:'\u0645',initial:'\uFEE3',medial:'\uFEE4',final:'\uFEE2'},
+  '\u0645':{isolated:'\uFEE1',initial:'\uFEE3',medial:'\uFEE4',final:'\uFEE2'},
   // Letter NOON
-  '\u0646':{isolated:'\u0646',initial:'\uFEE7',medial:'\uFEE8',final:'\uFEE6'},
+  '\u0646':{isolated:'\uFEE5',initial:'\uFEE7',medial:'\uFEE8',final:'\uFEE6'},
   // Letter HEH
-  '\u0647':{isolated:'\u0647',initial:'\uFEEB',medial:'\uFEEC',final:'\uFEEA'},
+  '\u0647':{isolated:'\uFEE9',initial:'\uFEEB',medial:'\uFEEC',final:'\uFEEA'},
   // Letter WAW
-  '\u0648':{isolated:'\u0648',final:'\uFEEE'},
+  '\u0648':{isolated:'\uFEED',final:'\uFEEE'},
   // Letter ALEF MAKSURA
-  '\u0649':{isolated:'\u0649',final:'\uFEF0'},
+  '\u0649':{isolated:'\uFEEF',final:'\uFEF0'},
   // Letter YEH
-  '\u064A':{isolated:'\u064A',initial:'\uFEF3',medial:'\uFEF4',final:'\uFEF2'},
+  '\u064A':{isolated:'\uFEF1',initial:'\uFEF3',medial:'\uFEF4',final:'\uFEF2'},
   // Letter ALEF WASLA
-  '\u0671':{isolated:'\u0671',final:'\uFB51'},
+  '\u0671':{isolated:'\uFB50',final:'\uFB51'},
   // Letter U WITH HAMZA ABOVE
-  '\u0677':{isolated:'\u0677'},
+  '\u0677':{isolated:'\uFBDD'},
   // Letter TTEH
-  '\u0679':{isolated:'\u0679',initial:'\uFB68',medial:'\uFB69',final:'\uFB67'},
+  '\u0679':{isolated:'\uFB66',initial:'\uFB68',medial:'\uFB69',final:'\uFB67'},
   // Letter TTEHEH
-  '\u067A':{isolated:'\u067A',initial:'\uFB60',medial:'\uFB61',final:'\uFB5F'},
+  '\u067A':{isolated:'\uFB5E',initial:'\uFB60',medial:'\uFB61',final:'\uFB5F'},
   // Letter BEEH
-  '\u067B':{isolated:'\u067B',initial:'\uFB54',medial:'\uFB55',final:'\uFB53'},
+  '\u067B':{isolated:'\uFB52',initial:'\uFB54',medial:'\uFB55',final:'\uFB53'},
   // Letter PEH
-  '\u067E':{isolated:'\u067E',initial:'\uFB58',medial:'\uFB59',final:'\uFB57'},
+  '\u067E':{isolated:'\uFB56',initial:'\uFB58',medial:'\uFB59',final:'\uFB57'},
   // Letter TEHEH
-  '\u067F':{isolated:'\u067F',initial:'\uFB64',medial:'\uFB65',final:'\uFB63'},
+  '\u067F':{isolated:'\uFB62',initial:'\uFB64',medial:'\uFB65',final:'\uFB63'},
   // Letter BEHEH
-  '\u0680':{isolated:'\u0680',initial:'\uFB5C',medial:'\uFB5D',final:'\uFB5B'},
+  '\u0680':{isolated:'\uFB5A',initial:'\uFB5C',medial:'\uFB5D',final:'\uFB5B'},
   // Letter NYEH
-  '\u0683':{isolated:'\u0683',initial:'\uFB78',medial:'\uFB79',final:'\uFB77'},
+  '\u0683':{isolated:'\uFB76',initial:'\uFB78',medial:'\uFB79',final:'\uFB77'},
   // Letter DYEH
-  '\u0684':{isolated:'\u0684',initial:'\uFB74',medial:'\uFB75',final:'\uFB73'},
+  '\u0684':{isolated:'\uFB72',initial:'\uFB74',medial:'\uFB75',final:'\uFB73'},
   // Letter TCHEH
-  '\u0686':{isolated:'\u0686',initial:'\uFB7C',medial:'\uFB7D',final:'\uFB7B'},
+  '\u0686':{isolated:'\uFB7A',initial:'\uFB7C',medial:'\uFB7D',final:'\uFB7B'},
   // Letter TCHEHEH
-  '\u0687':{isolated:'\u0687',initial:'\uFB80',medial:'\uFB81',final:'\uFB7F'},
+  '\u0687':{isolated:'\uFB7E',initial:'\uFB80',medial:'\uFB81',final:'\uFB7F'},
   // Letter DDAL
-  '\u0688':{isolated:'\u0688',final:'\uFB89'},
+  '\u0688':{isolated:'\uFB88',final:'\uFB89'},
   // Letter DAHAL
-  '\u068C':{isolated:'\u068C',final:'\uFB85'},
+  '\u068C':{isolated:'\uFB84',final:'\uFB85'},
   // Letter DDAHAL
-  '\u068D':{isolated:'\u068D',final:'\uFB83'},
+  '\u068D':{isolated:'\uFB82',final:'\uFB83'},
   // Letter DUL
-  '\u068E':{isolated:'\u068E',final:'\uFB87'},
+  '\u068E':{isolated:'\uFB86',final:'\uFB87'},
   // Letter RREH
-  '\u0691':{isolated:'\u0691',final:'\uFB8D'},
+  '\u0691':{isolated:'\uFB8C',final:'\uFB8D'},
   // Letter JEH
-  '\u0698':{isolated:'\u0698',final:'\uFB8B'},
+  '\u0698':{isolated:'\uFB8A',final:'\uFB8B'},
   // Letter VEH
-  '\u06A4':{isolated:'\u06A4',initial:'\uFB6C',medial:'\uFB6D',final:'\uFB6B'},
+  '\u06A4':{isolated:'\uFB6A',initial:'\uFB6C',medial:'\uFB6D',final:'\uFB6B'},
   // Letter PEHEH
-  '\u06A6':{isolated:'\u06A6',initial:'\uFB70',medial:'\uFB71',final:'\uFB6F'},
+  '\u06A6':{isolated:'\uFB6E',initial:'\uFB70',medial:'\uFB71',final:'\uFB6F'},
   // Letter KEHEH
-  '\u06A9':{isolated:'\u06A9',initial:'\uFB90',medial:'\uFB91',final:'\uFB8F'},
+  '\u06A9':{isolated:'\uFB8E',initial:'\uFB90',medial:'\uFB91',final:'\uFB8F'},
   // Letter NG
-  '\u06AD':{isolated:'\u06AD',initial:'\uFBD5',medial:'\uFBD6',final:'\uFBD4'},
+  '\u06AD':{isolated:'\uFBD3',initial:'\uFBD5',medial:'\uFBD6',final:'\uFBD4'},
   // Letter GAF
-  '\u06AF':{isolated:'\u06AF',initial:'\uFB94',medial:'\uFB95',final:'\uFB93'},
+  '\u06AF':{isolated:'\uFB92',initial:'\uFB94',medial:'\uFB95',final:'\uFB93'},
   // Letter NGOEH
-  '\u06B1':{isolated:'\u06B1',initial:'\uFB9C',medial:'\uFB9D',final:'\uFB9B'},
+  '\u06B1':{isolated:'\uFB9A',initial:'\uFB9C',medial:'\uFB9D',final:'\uFB9B'},
   // Letter GUEH
-  '\u06B3':{isolated:'\u06B3',initial:'\uFB98',medial:'\uFB99',final:'\uFB97'},
+  '\u06B3':{isolated:'\uFB96',initial:'\uFB98',medial:'\uFB99',final:'\uFB97'},
   // Letter NOON GHUNNA
-  '\u06BA':{isolated:'\u06BA',final:'\uFB9F'},
+  '\u06BA':{isolated:'\uFB9E',final:'\uFB9F'},
   // Letter RNOON
-  '\u06BB':{isolated:'\u06BB',initial:'\uFBA2',medial:'\uFBA3',final:'\uFBA1'},
+  '\u06BB':{isolated:'\uFBA0',initial:'\uFBA2',medial:'\uFBA3',final:'\uFBA1'},
   // Letter HEH DOACHASHMEE
-  '\u06BE':{isolated:'\u06BE',initial:'\uFBAC',medial:'\uFBAD',final:'\uFBAB'},
+  '\u06BE':{isolated:'\uFBAA',initial:'\uFBAC',medial:'\uFBAD',final:'\uFBAB'},
   // Letter HEH WITH YEH ABOVE
-  '\u06C0':{isolated:'\u06C0',final:'\uFBA5'},
+  '\u06C0':{isolated:'\uFBA4',final:'\uFBA5'},
   // Letter HEH GOAL
-  '\u06C1':{isolated:'\u06C1',initial:'\uFBA8',medial:'\uFBA9',final:'\uFBA7'},
+  '\u06C1':{isolated:'\uFBA6',initial:'\uFBA8',medial:'\uFBA9',final:'\uFBA7'},
   // Letter KIRGHIZ OE
-  '\u06C5':{isolated:'\u06C5',final:'\uFBE1'},
+  '\u06C5':{isolated:'\uFBE0',final:'\uFBE1'},
   // Letter OE
-  '\u06C6':{isolated:'\u06C6',final:'\uFBDA'},
+  '\u06C6':{isolated:'\uFBD9',final:'\uFBDA'},
   // Letter U
-  '\u06C7':{isolated:'\u06C7',final:'\uFBD8'},
+  '\u06C7':{isolated:'\uFBD7',final:'\uFBD8'},
   // Letter YU
-  '\u06C8':{isolated:'\u06C8',final:'\uFBDC'},
+  '\u06C8':{isolated:'\uFBDB',final:'\uFBDC'},
   // Letter KIRGHIZ YU
-  '\u06C9':{isolated:'\u06C9',final:'\uFBE3'},
+  '\u06C9':{isolated:'\uFBE2',final:'\uFBE3'},
   // Letter VE
-  '\u06CB':{isolated:'\u06CB',final:'\uFBDF'},
+  '\u06CB':{isolated:'\uFBDE',final:'\uFBDF'},
   // Letter FARSI YEH
-  '\u06CC':{isolated:'\u06CC',initial:'\uFBFE',medial:'\uFBFF',final:'\uFBFD'},
+  '\u06CC':{isolated:'\uFBFC',initial:'\uFBFE',medial:'\uFBFF',final:'\uFBFD'},
   // Letter E
-  '\u06D0':{isolated:'\u06D0',initial:'\uFBE6',medial:'\uFBE7',final:'\uFBE5'},
+  '\u06D0':{isolated:'\uFBE4',initial:'\uFBE6',medial:'\uFBE7',final:'\uFBE5'},
   // Letter YEH BARREE
-  '\u06D2':{isolated:'\u06D2',final:'\uFBAF'},
+  '\u06D2':{isolated:'\uFBAE',final:'\uFBAF'},
   // Letter YEH BARREE WITH HAMZA ABOVE
-  '\u06D3':{isolated:'\u06D3',final:'\uFBB1'}
+  '\u06D3':{isolated:'\uFBB0',final:'\uFBB1'}
 };
 
 // accent / vowel marks
@@ -1808,6 +1808,8 @@ if (options.ligatures !== false) {
 return output.map(function(o) {
   if (o[FORM] === NOT_SUPPORTED && o[LETTER].length) {
     return o[LETTER];
+  } else if (options.ignoreIsolates && o[FORM] === 'isolated') {
+    return o[LETTER] || '';
   } else {
     return (LETTERS[o[LETTER]] || {})[o[FORM]] || '';
   }

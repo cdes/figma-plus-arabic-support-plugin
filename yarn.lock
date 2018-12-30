@@ -2619,6 +2619,11 @@ jest@^23.6.0:
     import-local "^1.0.0"
     jest-cli "^23.6.0"
 
+js-arabic-reshaper@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/js-arabic-reshaper/-/js-arabic-reshaper-1.0.0.tgz#e9bbe07bf14fc3dbe7cd460a08989d4a84c9d0aa"
+  integrity sha1-6bvge/FPw9vnzUYKCJidSoTJ0Ko=
+
 js-levenshtein@^1.1.3:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/js-levenshtein/-/js-levenshtein-1.1.4.tgz#3a56e3cbf589ca0081eb22cd9ba0b1290a16d26e"
@@ -3705,6 +3710,11 @@ rollup-plugin-node-resolve@^4.0.0:
     builtin-modules "^3.0.0"
     is-module "^1.0.0"
     resolve "^1.8.1"
+
+rollup-plugin-run@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-run/-/rollup-plugin-run-1.1.0.tgz#5d9a3a16bf08aca6e5a2814b79c2b76f1210df27"
+  integrity sha512-79GROWUrh5H4mq8ooCuugDz3xCgLlqRQqKm+Tu1sQjLh3jrFkuNeQVQgaXAvIr5xVmxX5YPPYqJKLEjuynr2fQ==
 
 rollup-plugin-uglify@^6.0.0:
   version "6.0.0"

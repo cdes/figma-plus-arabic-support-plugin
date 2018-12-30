@@ -1,3 +1,3 @@
 import ArabicSupport from "./arabic-support.js";
 
-window.arabicSupport = new ArabicSupport();
+if (typeof window !== 'undefined') window.arabicSupport = new ArabicSupport();

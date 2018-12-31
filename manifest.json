@@ -1,19 +1,19 @@
 {
-	"name": "Alert File Name",
-	"id": "figma-plugin-boilterplate",
-	"version": "0.0.1",
-	"author": "Ahmed Al Haddad",
-	"github": "https://github.com/cdes/figma-plugin-boilterplate",
-  "description": "An example plugin for Figma that utlize Figma Plugin Manager API.",
-	"instructions": "1. Browse Plugins menu 2. Click 'Alert File Name'",
+	"name": "Arabic Support",
+	"id": "figma-arabic-support-plugin",
+	"version": "0.0.2",
+	"author": "Ahmad Al Haddad",
+	"github": "https://github.com/cdes/figma-arabic-support-plugin",
+  "description": "Adds Arabic Support for Figma (reshaping and direction).",
+	"instructions": "Select any text layer, start typing Arabic in the inspector.",
 	"updates": [
 		{
-			"version": "0.0.1",
-			"date": "12/16/2018",
+			"version": "0.0.2",
+			"date": "12/31/2018",
 			"notes": "First public release."
 		}
 	],
 	"js": [
-		"https://cdes.github.io/figma-plugin-boilterplate/dist/figma-plugin-boilterplate.js"
+		"https://cdes.github.io/figma-arabic-support-plugin/dist/figma-arabic-support-plugin.js"
   ]
 }

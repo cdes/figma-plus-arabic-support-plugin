@@ -1,76 +1,41 @@
-<h1 align="center"> Figma Plugin Boilerplate </h1>
+<h1 align="center"> Figma Arabic Support Plugin </h1>
 
-<p align="center"> Kickstart your awesome Figma plugin with this boilerplate. </p>
+<p align="center"> Enjoy Arabic support for text layers in Figma. </p>
 
 <hr/>
+
+<p align="center">
+<img src="https://cdes.github.io/figma-arabic-support-plugin/dist/preview.gif" height="320" />
+</p>
 
 <h3> Features </h3>
 
 <ul>
-  <li>Write your plugin in ES6</li>
-  <li>Tests using Jest</li>
-  <li>Transpiling using Babel and bundle using Rollup</li>
-  <li>Code formatting with Prettier</li>
+  <li>Native-like UI.</li>
+  <li>Reshapes Arabic glyphs properly.</li>
+  <li>Handles combinging English & Arabic text.</li>
+  <li>Provides options/workarounds to fix Figma's limitations with Arabic fonts.</li>
 </ul>
 
-<h3> Code Demo </h3>
 
-```js
-export default class ExamplePlugin {
-  constructor() {
-    this.options = [
-      "Alert File Name",
-      this.main.bind(this),
-      null,
-      { shift: true, option: true, key: "t" }
-    ];
+<h3> Limitations </h3>
 
-    const { figmaPlugin } = window;
-    figmaPlugin.createPluginsMenuItem(...this.options);
-
-    window.examplePlugin = this;
-  }
-
-  main() {
-    const { App, alert } = window;
-    const fileName = App.getCurrentFileName();
-
-    alert(fileName);
-  }
-}
-
-```
-
-<h3> Download & Development </h3>
+<ul>
+  <li>Figma partially reshapes Arabic which causes unexpected results.</li>
+  <li>Newlines (multilines) are ignored.</li>
+</ul>
 
 
-```shell
-$ git clone https://github.com/cdes/figma-plugin-boilerplate
-```
+<h3> How to install </h3> 
+<h4> Figma Desktop </h4> 
+Download the <a href="https://github.com/cdes/figma-plugin-manager-desktop/releases">Figma Plugins Injector</a> and it will install the plugins manager to your Figma.  Then from there search for the plugin and install it.
 
+<h4> Chrome Extension (for Figma web) </h4> 
+The extension is available through <a href="https://github.com/jachui/figma-plugin-manager">Figma Plugins Manager</a>.  It will install the plugins manager to your Figma.  Then from there search for the plugin and install it.
 
-```shell
-$ yarn install
-```
+<h3> How to use </h3> 
+Select sny text layer and start typing Arabic in the inspector.
 
-
-```shell
-$ yarn dev
-```
-
-
-```shell
-$ yarn test
-```
-
-<h4> Build a Distribution Bundle </h4>
-
-```shell
-$ yarn build
-```
-
-You'll see your bundle inside `dist` directory.
-Follow the <a href="http://figmaplugins.io/docs/publishing-a-plugin">docs instructions</a> to publish it.
 
 <h3>License</h3>
 

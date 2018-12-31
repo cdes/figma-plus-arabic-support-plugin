@@ -109,7 +109,7 @@ export default class ArabicSupport {
       const selectedNodeData = this.getOriginalData();
       textarea.value = selectedNodeData.text;
 
-      if(selectedNodeData.settings) {
+      if (selectedNodeData.settings) {
         ligaturesCheckbox.checked = selectedNodeData.settings[0];
         isolatesCheckbox.checked = selectedNodeData.settings[1];
         spacerHackCheckbox.checked = selectedNodeData.settings[2];
@@ -164,7 +164,7 @@ export default class ArabicSupport {
       const selectedNodeData = this.getOriginalData();
       textarea.value = selectedNodeData.text;
 
-      if(selectedNodeData.settings) {
+      if (selectedNodeData.settings) {
         ligaturesCheckbox.checked = selectedNodeData.settings[0];
         isolatesCheckbox.checked = selectedNodeData.settings[1];
         spacerHackCheckbox.checked = selectedNodeData.settings[2];
@@ -183,31 +183,32 @@ export default class ArabicSupport {
     }
   }
 
-  getOriginalData () {
-    const layerName = App._state.mirror.sceneGraph.get(this.selectedNodeId).name;
+  getOriginalData() {
+    const layerName = App._state.mirror.sceneGraph.get(this.selectedNodeId)
+      .name;
 
-    if (layerName.indexOf('<!--ARS[') !== -1 ) {
+    if (layerName.indexOf("<!--ARS[") !== -1) {
       const settings = JSON.parse(layerName.match(/\[([\s\S]*?)\]/)[0]);
       const text = layerName.replace(/<!--([\s\S]*?)-->/, "");
       return {
         text,
-        settings,
+        settings
       };
-    }
-    else {
+    } else {
       return {
-        text: '',
-      }
+        text: ""
+      };
     }
   }
 
-  saveOriginalData (text, settings) {
+  saveOriginalData(text, settings) {
+    const textWithSettings = `<!--ARS[${settings.ligatures},${
+      settings.ignoreIsolates
+    },${settings.spaceHack}]-->${text}`;
 
-    const textWithSettings = `<!--ARS[${settings.ligatures},${settings.ignoreIsolates},${settings.spaceHack}]-->${text}`;
-
-    App.sendMessage('setNodeProperty', {
+    App.sendMessage("setNodeProperty", {
       nodeId: this.selectedNodeId,
-      property: 'name',
+      property: "name",
       value: textWithSettings
     });
   }
@@ -225,8 +226,8 @@ export default class ArabicSupport {
     const settings = {
       ligatures: this.getLigaturesCheckbox().checked,
       ignoreIsolates: this.getIsolatesCheckbox().checked,
-      spaceHack: this.getSpacerHackCheckbox().checked,
-    }
+      spaceHack: this.getSpacerHackCheckbox().checked
+    };
 
     this.saveOriginalData(text, settings);
     const transformedText = transform(text, settings);

@@ -1,9 +1,9 @@
 {
-  "name": "figma-plugin-boilerplate",
-  "version": "0.0.1",
-  "description": "An example plugin for Figma that utlize Figma Plugin Manager API.",
-  "repository": "https://cdes@github.com/cdes/figma-plugin-boilerplate.git",
-  "author": "Ahmed Al Haddad <ahmed.hdd@gmail.com>",
+  "name": "figma-arabic-support-plugin",
+  "version": "0.0.2",
+  "description": "Adds Arabic Support for Figma (reshaping and direction).",
+  "repository": "https://cdes@github.com/cdes/figma-arabic-support-plugin.git",
+  "author": "Ahmad Al Haddad <haddad@ah.sa>",
   "license": "MIT",
   "dependencies": {
     "@babel/runtime": "^7.2.0",

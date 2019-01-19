@@ -7,7 +7,6 @@ import {
   getActiveTab,
   getNodeType,
   transform,
-  getNodeText,
   getSelectedType,
   getSelectedNodesIds
 } from "./utils";
@@ -81,20 +80,19 @@ export default class ArabicSupport {
 
   async inject() {
     await until(
-      () => getActiveTab() === "DESIGN" && getSelectedType() === "TEXT"
+      () => getActiveTab() === "design" && getSelectedType() === "TEXT"
     );
 
     if (!this.getPanel()) {
       const nodes = createNodes(nodesText);
       const textPanel = [].slice
         .call(
-          document
-            .getElementsByClassName(
-              "properties_panel--propertiesPanel--3PCth"
-            )[0]
-            .getElementsByClassName("cachedSubtree")
+          document.querySelectorAll(
+            ".properties_panel--propertiesPanel--3PCth span span .cachedSubtree"
+          )
         )
         .filter(panel => panel.textContent.indexOf("Text") !== -1)[0];
+
       textPanel.appendChild(nodes);
 
       const textarea = this.getTextarea();
@@ -153,9 +151,9 @@ export default class ArabicSupport {
 
     const selectedNodeId = selectionToNodeId(selections);
     this.selectedNodeId = selectedNodeId;
-    const nodeType = getNodeType(selectedNodeId);
+    const nodeType = figmaPlugin.scene.selection[0];
 
-    if (nodeType === "TEXT") {
+    if (nodeType && nodeType === "TEXT") {
       ui.style.display = "block";
       const textarea = this.getTextarea();
       const ligaturesCheckbox = this.getLigaturesCheckbox();
@@ -229,9 +227,11 @@ export default class ArabicSupport {
       spaceHack: this.getSpacerHackCheckbox().checked
     };
 
+    const selectedNode = window.figmaPlugin.scene.selection[0];
+
     this.saveOriginalData(text, settings);
     const transformedText = transform(text, settings);
-    window.figmaPlugin.replaceText(transformedText);
+    selectedNode.characters = transformedText;
     const textarea = this.getTextarea();
     textarea.focus();
   }

@@ -1,4 +1,4 @@
-export default (getActiveTab) => {
+export default () => {
   const tab = document.querySelector(
     ".properties_panel--activeTab--eBYRG.properties_panel--tab--1g-EF"
   );

@@ -1,8 +1,9 @@
 export default () => {
-  const nodeIds = Object.keys(App._state.mirror.sceneGraphSelection);
 
-  if (nodeIds.length === 1 && nodeIds[0]) {
-    return window.figmaPlugin.getNodeType(nodeIds[0]);
+  const selection = window.figmaPlugin.scene.selection;
+
+  if (selection.length === 1) {
+    return window.figmaPlugin.scene.selection[0].type;
   }
 
   return false;

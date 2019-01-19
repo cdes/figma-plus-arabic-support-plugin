@@ -11,8 +11,8 @@ export default [
 	{
 		input: 'src/main.js',
 		output: {
-			name: 'figma-plugin-boilterplate',
-			file: 'dist/figma-plugin-boilerplate.js',
+			name: 'figma-arabic-support-plugin',
+			file: 'dist/figma-arabic-support-plugin.js',
 			format: 'umd'
 		},
 		plugins: [

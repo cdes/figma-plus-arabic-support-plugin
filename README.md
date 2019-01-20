@@ -26,15 +26,11 @@
 </ul>
 
 
-<h3> How to install </h3> 
-<h4> Figma Desktop </h4> 
-Download the <a href="https://github.com/cdes/figma-plugin-manager-desktop/releases">Figma Plugins Injector</a> and it will install the plugins manager to your Figma.  Then from there search for the plugin and install it.
-
-<h4> Chrome Extension (for Figma web) </h4> 
-The extension is available through <a href="https://github.com/jachui/figma-plugin-manager">Figma Plugins Manager</a>.  It will install the plugins manager to your Figma.  Then from there search for the plugin and install it.
+# How to install
+Can be installed from ([Figma Plugins Manager](https://github.com/jachui/figma-plugin-manager)).
 
 <h3> How to use </h3> 
-Select sny text layer and start typing Arabic in the inspector.
+Select any text layer and start typing Arabic in the inspector.
 
 
 <h3>License</h3>

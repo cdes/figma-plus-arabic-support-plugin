@@ -9,11 +9,14 @@
 	"updates": [
 		{
 			"version": "0.0.2",
-			"date": "1/19/2019",
+			"date": "1/20/2019",
 			"notes": "First public release."
 		}
 	],
 	"js": [
 		"https://cdes.github.io/figma-arabic-support-plugin/dist/figma-arabic-support-plugin.js"
-  ]
+	],
+	"images": [
+		"https://cdes.github.io/figma-arabic-support-plugin/dist/preview.gif"
+	]
 }

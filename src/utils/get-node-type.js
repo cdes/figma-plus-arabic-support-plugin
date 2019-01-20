@@ -1,3 +1,3 @@
 export default (nodeId) => {
-  return window.figmaPlugin.getNodeType(nodeId);
+  return window.App._state.mirror.sceneGraph.get(nodeId).type;
 }

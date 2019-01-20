@@ -2939,6 +2939,11 @@ mime-types@^2.1.12, mime-types@~2.1.19:
   dependencies:
     mime-db "~1.37.0"
 
+mime@2:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.0.tgz#e051fd881358585f3279df333fe694da0bcffdd6"
+  integrity sha512-ikBcWwyqXQSHKtciCcctu9YfPbFYZ4+gbHEmE0Q8jzcTYQg5dHCr3g2wwAZjPoJfQVXZq6KXAjpXOTf5/cjT7w==
+
 mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
@@ -3205,6 +3210,11 @@ once@^1.3.0, once@^1.4.0:
   integrity sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
   dependencies:
     wrappy "1"
+
+opener@1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/opener/-/opener-1.5.1.tgz#6d2f0e77f1a0af0032aca716c2c1fbb8e7e8abed"
+  integrity sha512-goYSy5c2UXE4Ra1xixabeVh1guIX/ZV/YokJksb6q2lubWu6UbvPQ20p542/sFIll1nl8JnCyK9oBaOcCWXwvA==
 
 optimist@^0.6.1:
   version "0.6.1"
@@ -3715,6 +3725,14 @@ rollup-plugin-run@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/rollup-plugin-run/-/rollup-plugin-run-1.1.0.tgz#5d9a3a16bf08aca6e5a2814b79c2b76f1210df27"
   integrity sha512-79GROWUrh5H4mq8ooCuugDz3xCgLlqRQqKm+Tu1sQjLh3jrFkuNeQVQgaXAvIr5xVmxX5YPPYqJKLEjuynr2fQ==
+
+rollup-plugin-serve@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/rollup-plugin-serve/-/rollup-plugin-serve-1.0.0.tgz#8c842d95d8561ef89483e912d04dfa0bcd8d5998"
+  integrity sha512-bp7ftUSMTN/heBzf1wS2s+7WZEg+8f6G+neKLO+NZF0MqWAk0P2UKDc2BU76H3acISJTccM2k2vwFx2agZwqtg==
+  dependencies:
+    mime "2"
+    opener "1"
 
 rollup-plugin-uglify@^6.0.0:
   version "6.0.0"

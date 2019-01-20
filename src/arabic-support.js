@@ -55,7 +55,7 @@ export default class ArabicSupport {
       this.onLayersSelected.bind(this)
     );
 
-    setInterval(this.inject.bind(this), 500);
+    setInterval(this.inject.bind(this), 100);
   }
 
   getPanel() {
@@ -151,9 +151,9 @@ export default class ArabicSupport {
 
     const selectedNodeId = selectionToNodeId(selections);
     this.selectedNodeId = selectedNodeId;
-    const nodeType = figmaPlugin.scene.selection[0];
+    const nodeType = getNodeType(selectedNodeId);
 
-    if (nodeType && nodeType === "TEXT") {
+    if (nodeType === "TEXT") {
       ui.style.display = "block";
       const textarea = this.getTextarea();
       const ligaturesCheckbox = this.getLigaturesCheckbox();

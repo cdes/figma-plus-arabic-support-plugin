@@ -33,7 +33,7 @@
     "rollup-plugin-uglify": "^6.0.0"
   },
   "scripts": {
-    "build": "rollup -cm",
+    "build": "rollup -c",
     "prebuild": "prettier --write src/**",
     "dev": "rollup -cwm",
     "test": "jest"

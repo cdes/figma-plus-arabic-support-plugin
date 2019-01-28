@@ -227,7 +227,7 @@ export default class ArabicSupport {
       spaceHack: this.getSpacerHackCheckbox().checked
     };
 
-    const selectedNode = window.figmaPlugin.scene.selection[0];
+    const selectedNode = window.figmaPlus.scene.selection[0];
 
     this.saveOriginalData(text, settings);
     const transformedText = transform(text, settings);

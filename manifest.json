@@ -6,17 +6,10 @@
 	"github": "https://github.com/cdes/figma-arabic-support-plugin",
   "description": "Adds Arabic Support for Figma (reshaping and direction). 🚨 Important Note: the plugin uses the layer name to store the original text + config for that layer.",
 	"instructions": "Select any text layer, start typing Arabic in the inspector.",
-	"updates": [
-		{
-			"version": "0.0.2",
-			"date": "1/20/2019",
-			"notes": "First public release."
-		}
-	],
 	"js": [
-		"https://cdes.github.io/figma-arabic-support-plugin/dist/figma-arabic-support-plugin.js"
+		"dist/figma-arabic-support-plugin.js"
 	],
 	"images": [
-		"https://cdes.github.io/figma-arabic-support-plugin/dist/preview.gif"
+		"dist/preview.gif"
 	]
 }

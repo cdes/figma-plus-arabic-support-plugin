@@ -12,34 +12,52 @@ import {
 } from "./utils";
 
 const nodesText = `
-<div id="arabic-support" class="raw_components--panel--3IcXg " style="display: block;">
-    <div>
-        <div class="raw_components--panelTitle--7MaOu raw_components--base--3TpZG raw_components--row--3dLxJ collapsible_property_panel--panelTitle--1cZql">
-            <div class="collapsible_property_panel--panelTitleText--3GA0U">Arabic Support</div>
-        </div>
-        <span></span>
-        <div>
-            <div class="raw_components--row--3dLxJ type_panel--twoCol--Fj7rw" style="height: auto;"><label class="" style="display: flex;flex-direction: column;align-items: flex-start;justify-content: stretch;width: 100%;"><textarea dir="rtl" id="arabic-support-textarea" type="text" spellcheck="false" value="0" style="background: #fcfcfc;width: 100%;height: 24px;padding: 4px;box-sizing: border-box;border: 1px solid #d4d4d4;border-radius: 3px;height: 80px;margin-bottom: 8px;"></textarea></label></div>
-        </div>
-        <div class="raw_components--row--3dLxJ "><input type="checkbox" id="enable-ligatures" class=" checkbox--checkbox--2ubjb basic_form--checkbox--3eCIg"><label for="enable-ligatures" class="raw_components--label--34YmO raw_components--base--3TpZG ">Enable Ligatures</label>
-        <div style="flex-grow: 1;"></div>
-            <span tabindex="0" class="raw_components--iconButton--1XZ77">
-              <span class="gc358a75c" data-tooltip-text="Some fonts pack great ligatures, some don't"></span>
-            </span>
-        </div>
-        <div class="raw_components--row--3dLxJ "><input type="checkbox" id="ignore-isolates" class=" checkbox--checkbox--2ubjb basic_form--checkbox--3eCIg" checked="checked"><label for="ignore-isolates" class="raw_components--label--34YmO raw_components--base--3TpZG ">Ignore Isolates</label>
-            <div style="flex-grow: 1;"></div>
-            <span tabindex="0" class="raw_components--iconButton--1XZ77">
-              <span class="gc358a75c" data-tooltip-text="Some fonts don't have proper isolates glyphs. You'll notice this when some glyphs disappear from your text."></span>
-            </span>
-        </div>
-        <div class="raw_components--row--3dLxJ "><input type="checkbox" id="spacer-hack" class=" checkbox--checkbox--2ubjb basic_form--checkbox--3eCIg"><label for="spacer-hack" class="raw_components--label--34YmO raw_components--base--3TpZG ">Enable Spacer Hack</label>
-            <div style="flex-grow: 1;"></div>
-            <span tabindex="0" class="raw_components--iconButton--1XZ77">
-              <span class="gc358a75c" data-tooltip-text="Figma partially reshapes Arabic glyphs with an unexpected behavior.  This hack will add a tiny space between all characters to prevent Figma from reshaping, you need to decrease character spacing by about %2 to counter this increase."></span>
-            </span>
-        </div>
+<div id="arabic-support" style="display: block;border-bottom: 1px solid #e5e5e5;padding: 6px 0;">
+  <style>
+    #arabic-support input[type="checkbox"]:after {
+      content: '';
+      display: inline-flex;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #d4d4d4;
+      border-radius: 3px;
+      box-sizing: border-box;
+      background-color: #fff;
+    }
+
+    #arabic-support input[type="checkbox"]:checked:after {
+      background-image: url(/images/checkbox_check_gray.svg);
+      background-position: 50%;
+      background-repeat: no-repeat;
+    }
+  </style>
+  <div>
+    <div style="position: relative;text-transform: uppercase;letter-spacing: 1px;display: flex;justify-content: space-between;height: 36px;padding: 0 12px;align-items: center;box-sizing: border-box;font-size: 11px;color: #444;fill: #444;cursor: default;">
+        <div style="flex-grow: 1;height: 100%;display: flex;align-items: center;">Arabic Support</div>
     </div>
+    <span></span>
+    <div>
+      <div style="height: auto;padding: 0 12px;display: flex;align-items: center;box-sizing: border-box;"><label class="" style="display: flex;flex-direction: column;align-items: flex-start;justify-content: stretch;width: 100%;"><textarea dir="rtl" id="arabic-support-textarea" type="text" spellcheck="false" value="0" style="background: #fcfcfc;width: 100%;height: 24px;padding: 4px;box-sizing: border-box;border: 1px solid #d4d4d4;border-radius: 3px;height: 80px;margin-bottom: 8px;"></textarea></label></div>
+    </div>
+    <div style="height: 36px;padding: 0 12px;display: flex;align-items: center;box-sizing: border-box;"><input type="checkbox" id="enable-ligatures" style="margin-right: 6px!important;-webkit-appearance: none;appearance: none;-moz-appearance: checkbox;width: 14px;height: 14px;margin-right: 12px;display: inline-flex;"><label for="enable-ligatures" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;font-size: 11px;color: #444;fill: #444;cursor: default;">Enable Ligatures</label>
+    <div style="flex-grow: 1;"></div>
+      <span tabindex="0" class="raw_components--iconButton--1XZ77">
+        <span class="gc358a75c" data-tooltip-text="Some fonts pack great ligatures, some don't"></span>
+      </span>
+    </div>
+    <div style="height: 36px;padding: 0 12px;display: flex;align-items: center;box-sizing: border-box;"><input type="checkbox" id="ignore-isolates" style="margin-right: 6px!important;-webkit-appearance: none;appearance: none;-moz-appearance: checkbox;width: 14px;height: 14px;margin-right: 12px;display: inline-flex;" checked="checked"><label for="ignore-isolates" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;font-size: 11px;color: #444;fill: #444;cursor: default;">Ignore Isolates</label>
+      <div style="flex-grow: 1;"></div>
+      <span tabindex="0" class="raw_components--iconButton--1XZ77">
+        <span class="gc358a75c" data-tooltip-text="Some fonts don't have proper isolates glyphs. You'll notice this when some glyphs disappear from your text."></span>
+      </span>
+    </div>
+    <div style="height: 36px;padding: 0 12px;display: flex;align-items: center;box-sizing: border-box;"><input type="checkbox" id="spacer-hack" style="margin-right: 6px!important;-webkit-appearance: none;appearance: none;-moz-appearance: checkbox;width: 14px;height: 14px;margin-right: 12px;display: inline-flex;"><label for="spacer-hack" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;font-size: 11px;color: #444;fill: #444;cursor: default;">Enable Spacer Hack</label>
+      <div style="flex-grow: 1;"></div>
+      <span tabindex="0" class="raw_components--iconButton--1XZ77">
+        <span class="gc358a75c" data-tooltip-text="Figma partially reshapes Arabic glyphs with an unexpected behavior.  This hack will add a tiny space between all characters to prevent Figma from reshaping, you need to decrease character spacing by about %2 to counter this increase."></span>
+      </span>
+    </div>
+  </div>
 </div>
 `;
 

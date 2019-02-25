@@ -170,7 +170,7 @@ export default class ArabicSupport {
     const selectedNodeId = selectionToNodeId(selections);
     this.selectedNodeId = selectedNodeId;
 
-    const node = App._state.mirror.sceneGraph.get(nodeId);
+    const node = App._state.mirror.sceneGraph.get(selectedNodeId);
 
     if (typeof node === "undefined" || node.type === "TEXT") {
       ui.style.display = "block";

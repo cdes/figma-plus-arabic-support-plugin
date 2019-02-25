@@ -5,7 +5,7 @@
 <hr/>
 
 <p align="center">
-<img src="https://cdes.github.io/figma-arabic-support-plugin/dist/preview.gif" height="320" />
+<img src="https://user-images.githubusercontent.com/1207863/53366646-2a86ee00-3955-11e9-88c8-26205cee35ad.gif" height="320" />
 </p>
 
 <h3> Features </h3>

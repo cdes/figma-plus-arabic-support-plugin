@@ -169,9 +169,10 @@ export default class ArabicSupport {
 
     const selectedNodeId = selectionToNodeId(selections);
     this.selectedNodeId = selectedNodeId;
-    const nodeType = getNodeType(selectedNodeId);
 
-    if (nodeType === "TEXT") {
+    const node = App._state.mirror.sceneGraph.get(nodeId);
+
+    if (typeof node === "undefined" || node.type === "TEXT") {
       ui.style.display = "block";
       const textarea = this.getTextarea();
       const ligaturesCheckbox = this.getLigaturesCheckbox();

@@ -1,10 +1,10 @@
 {
-	"name": "Arabic Support",
+	"name": "Arabic Support (Experimental)",
 	"id": "figma-arabic-support-plugin",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"author": "Ahmad Al Haddad",
 	"github": "https://github.com/cdes/figma-arabic-support-plugin",
-  "description": "Adds Arabic Support for Figma (reshaping and direction). Important Note: the plugin uses the layer name to store the original text and the configurations for that layer.",
+  "description": "ALPHA: Adds Arabic Support for Figma (reshaping and direction). Important Note: the plugin uses the layer name to store the original text and the configurations for that layer.",
 	"instructions": "Select any text layer, start typing Arabic in the inspector.",
 	"js": [
 		"dist/figma-arabic-support-plugin.js"

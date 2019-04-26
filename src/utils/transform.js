@@ -52,6 +52,8 @@ const transform = (str, {spaceHack = false, ligatures = false, ignoreIsolates = 
     transformed = transformed.split('').join('\u200a');
   }
 
+  transformed = transformed.split('\n').reverse().join('\n');
+
   return transformed;
 }
 

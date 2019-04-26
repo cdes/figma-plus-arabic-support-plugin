@@ -17,27 +17,51 @@ const nodesText = `
     #arabic-support input[type="checkbox"]:after {
       content: '';
       display: inline-flex;
-      width: 14px;
-      height: 14px;
-      border: 1px solid #d4d4d4;
-      border-radius: 3px;
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,.8);
+      border-radius: 2px;
       box-sizing: border-box;
       background-color: #fff;
     }
 
     #arabic-support input[type="checkbox"]:checked:after {
-      background-image: url(/images/checkbox_check_gray.svg);
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB2aWV3Qm94PSIwIDAgOCA4IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMS4xNzY0NyAyLjgyMzc3TDMuMDU4ODIgNC43MDYxM0w2LjgyMzUzIDAuOTQxNDA2TDggMi4xMTc4OEwzLjA1ODgyIDcuMDU5MDhMMCA0LjAwMDI0TDEuMTc2NDcgMi44MjM3N1oiIGZpbGw9IndoaXRlIi8+PC9zdmc+);
+      border: 1px solid #18a0fb;
+      background-color: #18a0fb;
       background-position: 50%;
       background-repeat: no-repeat;
     }
+
+    #arabic-support textarea {
+      background: #fcfcfc;width: 100%;
+      height: 24px;
+      padding: 4px;
+      box-sizing: border-box;
+      border: 1px solid transparent;
+      border-radius: 2px;
+      height: 80px;
+      margin-bottom: 8px;
+    }
+
+    #arabic-support textarea:hover {
+      border: 1px solid rgba(0,0,0,.1);
+    }
+
+    #arabic-support textarea:focus {
+      border: 1px solid #18a0fb;
+      outline: 1px solid #18a0fb;
+      outline-offset: -2px;
+    }
   </style>
   <div>
-    <div style="position: relative;text-transform: uppercase;letter-spacing: 1px;display: flex;justify-content: space-between;height: 36px;padding: 0 12px;align-items: center;box-sizing: border-box;font-size: 11px;color: #444;fill: #444;cursor: default;">
+    <div style="position: relative;display: flex;justify-content: space-between;height: 36px;padding: 0 12px;align-items: center;box-sizing: border-box;font-size: 11px;color: #444;fill: #444;cursor: default;font-weight: 600;">
         <div style="flex-grow: 1;height: 100%;display: flex;align-items: center;">Arabic Support</div>
     </div>
     <span></span>
     <div>
-      <div style="height: auto;padding: 0 12px;display: flex;align-items: center;box-sizing: border-box;"><label class="" style="display: flex;flex-direction: column;align-items: flex-start;justify-content: stretch;width: 100%;"><textarea dir="rtl" id="arabic-support-textarea" type="text" spellcheck="false" value="0" style="background: #fcfcfc;width: 100%;height: 24px;padding: 4px;box-sizing: border-box;border: 1px solid #d4d4d4;border-radius: 3px;height: 80px;margin-bottom: 8px;"></textarea></label></div>
+      <div style="height: auto;padding: 0 12px;display: flex;align-items: center;box-sizing: border-box;"><label class="" style="display: flex;flex-direction: column;align-items: flex-start;justify-content: stretch;width: 100%;"><textarea dir="rtl" id="arabic-support-textarea" type="text" spellcheck="false" value="0"></textarea></label></div>
     </div>
     <div style="height: 36px;padding: 0 12px;display: flex;align-items: center;box-sizing: border-box;"><input type="checkbox" id="enable-ligatures" style="margin-right: 6px!important;-webkit-appearance: none;appearance: none;-moz-appearance: checkbox;width: 14px;height: 14px;margin-right: 12px;display: inline-flex;"><label for="enable-ligatures" style="-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;font-size: 11px;color: #444;fill: #444;cursor: default;">Enable Ligatures</label>
     <div style="flex-grow: 1;"></div>
@@ -66,42 +90,42 @@ export default class ArabicSupport {
     this.inject();
     window.App.fromFullscreen.on(
       "selection:replaceSelectors",
-      this.onLayersSelected.bind(this)
+      this.onLayersSelected
     );
     window.App.fromFullscreen.on(
       "selection:addSelectors",
-      this.onLayersSelected.bind(this)
+      this.onLayersSelected
     );
 
-    setInterval(this.inject.bind(this), 100);
+    setInterval(this.inject, 100);
   }
 
-  getPanel() {
+  getPanel = () => {
     return document.getElementById("arabic-support");
-  }
+  };
 
-  getTextarea() {
+  getTextarea = () => {
     return document.getElementById("arabic-support-textarea");
-  }
+  };
 
-  getLigaturesCheckbox() {
+  getLigaturesCheckbox = () => {
     return document.getElementById("enable-ligatures");
-  }
+  };
 
-  getIsolatesCheckbox() {
+  getIsolatesCheckbox = () => {
     return document.getElementById("ignore-isolates");
-  }
+  };
 
-  getSpacerHackCheckbox() {
+  getSpacerHackCheckbox = () => {
     return document.getElementById("spacer-hack");
-  }
+  };
 
-  async inject() {
+  inject = async () => {
     await until(
       () => getActiveTab() === "design" && getSelectedType() === "TEXT"
     );
 
-    if (!this.getPanel()) {
+    if (this.getPanel() === null) {
       const nodes = createNodes(nodesText);
       const textPanel = [].slice
         .call(
@@ -131,29 +155,26 @@ export default class ArabicSupport {
         spacerHackCheckbox.checked = selectedNodeData.settings[2];
       }
 
-      textarea.addEventListener(
-        "input",
-        debounce(this.handleInput.bind(this), 150)
-      );
+      textarea.addEventListener("input", debounce(this.handleInput, 50));
 
       ligaturesCheckbox.addEventListener(
         "change",
-        debounce(this.handleCheckbox.bind(this), 150)
+        debounce(this.handleCheckbox, 50)
       );
 
       isolatesCheckbox.addEventListener(
         "change",
-        debounce(this.handleCheckbox.bind(this), 150)
+        debounce(this.handleCheckbox, 50)
       );
 
       spacerHackCheckbox.addEventListener(
         "change",
-        debounce(this.handleCheckbox.bind(this), 150)
+        debounce(this.handleCheckbox, 50)
       );
     }
-  }
+  };
 
-  onLayersSelected(event) {
+  onLayersSelected = event => {
     const ui = this.getPanel();
     const selections = Array.from(event.buffer);
     const sceneGraphSelection = Object.keys(
@@ -164,9 +185,10 @@ export default class ArabicSupport {
       ui === null ||
       selections.length !== 8 ||
       sceneGraphSelection.length > 1
-    )
+    ) {
+      console.log(ui, selections, sceneGraphSelection);
       return;
-
+    }
     const selectedNodeId = selectionToNodeId(selections);
     this.selectedNodeId = selectedNodeId;
 
@@ -198,9 +220,9 @@ export default class ArabicSupport {
       isolatesCheckbox.checked = true;
       spacerHackCheckbox.checked = false;
     }
-  }
+  };
 
-  getOriginalData() {
+  getOriginalData = () => {
     const layerName = App._state.mirror.sceneGraph.get(this.selectedNodeId)
       .name;
 
@@ -216,9 +238,9 @@ export default class ArabicSupport {
         text: ""
       };
     }
-  }
+  };
 
-  saveOriginalData(text, settings) {
+  saveOriginalData = (text, settings) => {
     const textWithSettings = `<!--ARS[${settings.ligatures},${
       settings.ignoreIsolates
     },${settings.spaceHack}]-->${text}`;
@@ -228,30 +250,32 @@ export default class ArabicSupport {
       property: "name",
       value: textWithSettings
     });
-  }
+  };
 
-  handleInput(event) {
+  handleInput = event => {
     this.transformText(event.target.value);
-  }
+  };
 
-  handleCheckbox() {
+  handleCheckbox = () => {
     const text = this.getTextarea().value;
     this.transformText(text);
-  }
+  };
 
-  transformText(text) {
+  transformText = text => {
     const settings = {
       ligatures: this.getLigaturesCheckbox().checked,
       ignoreIsolates: this.getIsolatesCheckbox().checked,
       spaceHack: this.getSpacerHackCheckbox().checked
     };
 
-    const selectedNode = window.figmaPlus.scene.selection[0];
+    const selectedNodes = window.figma.currentPage.selection;
 
     this.saveOriginalData(text, settings);
     const transformedText = transform(text, settings);
-    selectedNode.characters = transformedText;
+    selectedNodes.forEach(node => {
+      node.characters = transformedText;
+    });
     const textarea = this.getTextarea();
     textarea.focus();
-  }
+  };
 }

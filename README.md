@@ -13,8 +13,9 @@
 <ul>
   <li>Native-like UI.</li>
   <li>Reshapes Arabic glyphs properly.</li>
-  <li>Handles combinging English & Arabic text.</li>
+  <li>Handles mixed English & Arabic text.</li>
   <li>Provides options/workarounds to fix Figma's limitations with Arabic fonts.</li>
+  <li>Supports multiline text.</li>
 </ul>
 
 
@@ -22,7 +23,6 @@
 
 <ul>
   <li>Figma partially reshapes Arabic which causes unexpected results.</li>
-  <li>Newlines (multilines) are ignored.</li>
 </ul>
 
 

@@ -43,6 +43,7 @@ const nodesText = `
       border-radius: 2px;
       height: 80px;
       margin-bottom: 8px;
+      resize: vertical;
     }
 
     #arabic-support textarea:hover {
@@ -56,7 +57,7 @@ const nodesText = `
     }
   </style>
   <div>
-    <div style="position: relative;display: flex;justify-content: space-between;height: 36px;padding: 0 12px;align-items: center;box-sizing: border-box;font-size: 11px;color: #444;fill: #444;cursor: default;font-weight: 600;">
+    <div style="position: relative;display: flex;justify-content: space-between;height: 36px;padding: 0 12px;align-items: center;box-sizing: border-box;font-size: 11px;cursor: default;font-weight: 600;">
         <div style="flex-grow: 1;height: 100%;display: flex;align-items: center;">Arabic Support</div>
     </div>
     <span></span>
@@ -96,6 +97,11 @@ export default class ArabicSupport {
       "selection:addSelectors",
       this.onLayersSelected
     );
+
+    // window.App.fromFullscreen.on(
+    //   "selectionPropertiesUpdate",
+    //   this.onLayersResize
+    // );
 
     setInterval(this.inject, 100);
   }
@@ -186,7 +192,6 @@ export default class ArabicSupport {
       selections.length !== 8 ||
       sceneGraphSelection.length > 1
     ) {
-      console.log(ui, selections, sceneGraphSelection);
       return;
     }
     const selectedNodeId = selectionToNodeId(selections);

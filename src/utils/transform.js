@@ -1,6 +1,8 @@
 import { reshape } from './js-arabic-reshaper';
 import direction from 'direction';
 import reverse from "./reverse-string";
+import fixArabicNumbers from 'fix-arabic-numbers';
+import isNumber from "is-number";
 
 const isLTR = (str) => direction(str) === 'ltr';
 const isRTL = (str) => direction(str) === 'rtl';
@@ -17,7 +19,7 @@ const split = (str, tokens) => {
 
 const transform = (str, {spaceHack = false, ligatures = false, ignoreIsolates = true} = {}) => {
 
-  const neutral = str.split('').filter(char => isNeutral(char));
+  const neutral = str.split('').filter(char => isNeutral(char) && !isNumber(char));
   
   let reversed;
 
@@ -27,7 +29,7 @@ const transform = (str, {spaceHack = false, ligatures = false, ignoreIsolates = 
   }
   else {
     reversed = split(str, neutral).map(word => {
-      if (isLTR(word)) {
+      if (isLTR(word) || isNumber(word) || isNumber(fixArabicNumbers(word))) {
         return word;
       }
       else {
@@ -58,7 +60,7 @@ const transform = (str, {spaceHack = false, ligatures = false, ignoreIsolates = 
 }
 
 if(typeof process !== 'undefined' && process.env.ROLLUP_WATCH) {
-  const text = "أنا دائم التألق بالكتابة بالعربي with English. والعربية أيضاm";
+  const text = "أنا دائم التألق بالكتابة 2019 ٢٠١٩ بالعربي with English. والعربية أيضاm";
   console.log(transform(text, {ligatures: false}));
 }
 

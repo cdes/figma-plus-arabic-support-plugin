@@ -1,6 +1,6 @@
 {
   "name": "figma-arabic-support-plugin",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Adds Arabic Support for Figma (reshaping and direction).",
   "repository": "https://cdes@github.com/cdes/figma-arabic-support-plugin.git",
   "author": "Ahmad Al Haddad <haddad@ah.sa>",

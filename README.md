@@ -23,6 +23,7 @@
 
 <ul>
   <li>Figma partially reshapes Arabic which causes unexpected results.</li>
+  <li>Line wrapping is not supported because it's not possible <i>yet</i> to hook into Figma's wrapping algorithm.</li>
 </ul>
 
 
